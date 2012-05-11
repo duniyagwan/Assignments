@@ -5,7 +5,7 @@ Twenty Thousand Leagues Under the Sea is a clssic science fiction novel by Frenc
 ![Book cover](http://upload.wikimedia.org/wikipedia/commons/4/4e/20000_title_0a.jpg)
 
  
-- [wikipedia entry](http://en.wikipedia.org/wiki/Twenty_Thousand_League_under_the_Sea)"Twenty Thousnd Leagues under the Sea on wikipedia"
+- [wikipedia entry](http://en.wikipedia.org/wiki/Twenty_Thousand_League_under_the_Sea)
 
 ******
 
