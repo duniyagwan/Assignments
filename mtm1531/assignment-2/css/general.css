@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+	background-color: #9CC;
+}
+
+body {
+	margin: 3em auto;
+	width : 50em;
+	padding: 0.5 em;
+}
+
+form {
+	margin: 0;
+	float: left;
+	padding-top: 0.25em;
+	
+}
