@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+html {
+	background-color:#003;
+}
+
+li {
+	color:#399;
+	cursor:pointer;
+}
+
+form {
+	width:10em;
+	margin:10em
+	border:2px solid #FFF;
+}
