@@ -1,0 +1,41 @@
+1.Get all the information about a single movie in the database.
+
+ SELECT *
+ FROM movies
+ WHERE id = 3	
+
+
+2.Get the title and release date for the first three movies in alphabetical order.
+
+ SELECT title,release_date
+ FROM movies
+ WHERE id IN (1,2,3)
+
+
+3.Get the title and director for the movies ordered by the release date, oldest first.
+
+ SELECT title,director
+ FROM movies
+ ORDER BY release_date ASC
+
+
+4.Change the title and director of a single movie in the database.
+
+ UPDATE movies
+ SET title = 'tomorrow again',
+ director = 'Kent Wallabe'
+ WHERE id = 1
+
+
+5.Create a new movie in the database.
+
+ INSERT INTO movies
+ (title,release_date,director,genre)
+ VALUES
+ ('Battlefield America', '2012-06-01', 'Chris Stokes', 'musical')
+
+
+6.Remove a single movie from the database.
+
+DELETE FROM movies
+WHERE id = 4 
