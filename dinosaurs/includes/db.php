@@ -3,9 +3,9 @@
 // opens a connection to mySQL database
 // shared between all the php files in our application
 
-$user ='root';
-$pass ='root';
-$data_source ='mysql:host=localhost;dbname=duni0004';
+$user = getenv('DB_USER'); // THE MYSQL username
+$pass =  getenv('DB_PASS'); // THE MYSQL password
+$data_source = getenv('DATA_SOURCE');
 
 // PDO: PHP Data Objects
 //allows us to connect to many diff kinds of databases
