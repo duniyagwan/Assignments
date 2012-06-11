@@ -13,12 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$errors['title'] = true;
 	}
 	
-	if (strlen($release_date,)! = 10) {
+	if (strlen($release_date) != 10) {
 		$errors['release_date'] = true;
 		
 	}
 	
-	if (strlen($director) < || strlen($director) > 256) {
+	if (strlen($director) < 1 || strlen($director) > 256) {
 		$errors['director'] = true;
 		
 	}
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		
 		<div>
 			<label for="release_date">
-			Movie Title
+			Release Date
 			<?php if (isset($errors['release_date'])) : ?>
 			<strong class="error">is required</strong>
 			<?php endif; ?> 
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		
 		<div>
 			<label for="director">
-			Movie Title
+			Director
 			<?php if (isset($errors['director'])) : ?>
 			<strong class="error">is required</strong>
 			<?php endif; ?> 
@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		
 		<div>
 			<label for="genre">
-			Movie Title
+			Genre
 			<?php if (isset($errors['genre'])) : ?>
 			<strong class="error">is required</strong>
 			<?php endif; ?> 
