@@ -1,9 +1,9 @@
 <?php
 
-
+$errors = array();
 
 $dino_name = filter_input(INPUT_POST, 'dino_name', FILTER_SANITIZE_STRING);
-$loves_meat = filter_input(INPUT_POST, 'loves_meat', FILTER_SANITIZE_NUMBER);
+$loves_meat = filter_input(INPUT_POST, 'loves_meat', FILTER_SANITIZE_NUMBER_INT);
 $in_jurassic_park = (isset($POST['in_jurassic_park'])) ? 1 : 0;
 
 
@@ -62,7 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		</fieldset>
 			 
 		<div>
-			<input type="checkbox" id="in_jurassic_park" name="in_jurassic_park">
+			<input type="checkbox" id="in_jurassic_park" name="in_jurassic_park"
+				<?php if ($in_jurassic_park == 1) : ?>checked<?php endif; ?>>
 			<label for="in_jurassic_park">In Jurassic park</label>
 		</div>	 
 					
