@@ -24,8 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		
 		
 		$sql = $db->prepare('
-		INSERT INTO dinosaurs (dino_name, loves_meat, in_jurassic_park)
-		VALUES (:dino_name, :loves_meat, :in_jurassic_park)
+			UPDATE dinosaurs
+			SET dino_name = :dino_name
+				,loves_meat = :loves_meat
+				,in_jurassic_park = :in_jurassic_park
+			WHERE id = :id		
 		');
 		$sql->bindValue(':dino_name', $dino_name, PDO::PARAM_STR);
 		$sql->bindValue(':loves_meat', $loves_meat, PDO::PARAM_INT);
@@ -66,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	<h1>Edit Dinosaur</h1>
 	
-	<form method="post" action="add.php">
+	<form method="post" action="edit.php?id=<?php echo $id ?>">
 	
 		<div>
 			<label for="dino _name">
