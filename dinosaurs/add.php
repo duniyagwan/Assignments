@@ -25,12 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		VALUES (:dino_name, :loves_meat, :in_jurassic_park)
 		');
 		$sql->bindValue(':dino_name', $dino_name, PDO::PARAM_STR);
-		$sql->bindValue(':loves_meat', $loves_meat, PDO::PARAM_INT	);
+		$sql->bindValue(':loves_meat', $loves_meat, PDO::PARAM_INT);
 		$sql->bindValue(':in_jurassic_park', $in_jurassic_park, PDO::PARAM_INT);
 		$sql->execute();
 		// Do DB stuff
 		
-		header('location: index.php'); 
+		header('Location: index.php');
+		exit; 
 		
 	}
 }
@@ -65,10 +66,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			<strong class="error">is required</strong>
 			<?php endif; ?>
 			</legend>
-			<input type="radio" id="love" name="loves _meat" value="1"
+			<input type="radio" id="love" name="loves_meat" value="1"
 				<?php if ($loves_meat == 1) : ?>checked<?php endif; ?>>
 			<label for="love">loves meat </label>
-			<input type="radio" id="hate" name="loves _meat" value="0"
+			<input type="radio" id="hate" name="loves_meat" value="0"
 				<?php if ($loves_meat == 0) : ?>checked<?php endif; ?>>
 			<label for="hate">Hates meat</label>
 		</fieldset>
