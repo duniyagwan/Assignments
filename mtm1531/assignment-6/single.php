@@ -32,14 +32,14 @@ $results = $sql->fetch();
 				<dd><?php echo $results['release_date']; ?></dd>
 				<dt>Director:</dt>
 				<dd><?php echo $results['director']; ?></dd>
-				<dt>Genre</dt>
+				<dt>Genre:</dt>
                 <dd><?php echo $results['genre']; ?></dd>
 			</dl>
 
-		<a href="delete.php?id=<?php echo $id;?>">Delete movie</a>
-		<a href="edit.php?id=<?php echo $id;?>">Edit movie</a>
+		<a href="delete.php?id=<?php echo $id; ?>">Delete movie</a>
+		<a href="edit.php?id=<?php echo $id; ?>">Edit movie</a>
 	</div>
 
-<p><a href="index.php">Go back to movie list</a></p>
+		<p><a href="index.php">Go back to movie list</a></p>
 </body>
 </html>
