@@ -5,7 +5,6 @@ $planet = '';
 if (isset($_GET['planet'])) {
 	$planet = strtolower($_GET['planet']);
 }
-
 ?><!DOCTYPE HTML>
 <html>
 <head>
@@ -17,7 +16,7 @@ if (isset($_GET['planet'])) {
 
 	<nav>
 		<ul>
-			<li<?php if ($planet != 'jupiter' && $planet != 'neptune' && $planet != 'mars') { ?> class="current"<?php } ?>><a href="?planet=earth">Earth</a></li>
+			<li<?php if ($planet != 'jupiter' && $planet != 'neptune' && $planet != 'mars') { ?> class="current"<?php } ?>><a href="?planet=earth">				
 			<li<?php if ($planet == 'jupiter') { ?> class="current"<?php } ?>><a href="?planet=jupiter">Jupiter</a></li>
 			<li<?php if ($planet == 'neptune') { ?> class="current"<?php } ?>><a href="?planet=neptune">Neptune</a></li>
 			<li<?php if ($planet == 'mars') { ?> class="current"<?php } ?>><a href="?planet=mars">Mars</a></li>
@@ -42,7 +41,6 @@ if (isset($_GET['planet'])) {
 		}
 	?>
 	</div>
-
 </body>
 </html>
 
