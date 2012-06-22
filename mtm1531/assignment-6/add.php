@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$sql->bindValue(':director', $director, PDO::PARAM_INT);
 		$sql->bindValue(':genre', $genre, PDO::PARAM_INT);
 		
-		
+		$sql->execute();
 		// Do DB stuff
 		
 		header('Location: index.php');
