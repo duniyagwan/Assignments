@@ -17,4 +17,3 @@ $sql->bindValue(':id', $id, PDO::PARAM_INT);
 $sql->execute();
 
 header('Location: index.php');
-exit;
