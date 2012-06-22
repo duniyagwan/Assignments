@@ -29,13 +29,15 @@ $results = $sql->fetch();
 		<h2><?php echo $results['title']; ?></h2>
 			<dl>
 				<dt>Release Date:</dt>
-				<dd><?php echo $results['release_date'];?></dd>
+				<dd><?php echo $results['release_date']; ?></dd>
 				<dt>Director:</dt>
-				<dd><?php echo $results['director'];?></dd>
-                <dd><?php echo $results['genre'];?></dd>
+				<dd><?php echo $results['director']; ?></dd>
+				<dt>Genre</dt>
+                <dd><?php echo $results['genre']; ?></dd>
 			</dl>
 
 		<a href="delete.php?id=<?php echo $id;?>">Delete movie</a>
+		<a href="edit.php?id=<?php echo $id;?>">Edit movie</a>
 	</div>
 
 <p><a href="index.php">Go back to movie list</a></p>
