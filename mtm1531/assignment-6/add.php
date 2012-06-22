@@ -5,7 +5,7 @@ $errors = array();
 require_once 'includes/db.php';
 
 $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
-$release_date = filter_input(INPUT_POST, 'release_date', FILTER_NUMBER_INT);
+$release_date = filter_input(INPUT_POST, 'release_date', FILTER_SANITIZE_NUMBER_INT);
 $director = filter_input(INPUT_POST, 'director', FILTER_SANITIZE_STRING);
 $genre = filter_input(INPUT_POST, 'genre', FILTER_SANITIZE_STRING);
 
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$sql->bindValue(':director', $director, PDO::PARAM_INT);
 		$sql->bindValue(':genre', $genre, PDO::PARAM_INT);
 		
-		$sql->execute();
+		
 		// Do DB stuff
 		
 		header('Location: index.php');
