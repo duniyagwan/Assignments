@@ -2,40 +2,42 @@
 
 $errors = array();
 
+require_once 'includes/db.php';
+
 $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
-$release_date = filter_input(INPUT_POST, 'release_date', FILTER_SANITIZE_STRING);
+$release_date = filter_input(INPUT_POST, 'release_date', FILTER_NUMBER_INT);
 $director = filter_input(INPUT_POST, 'director', FILTER_SANITIZE_STRING);
 $genre = filter_input(INPUT_POST, 'genre', FILTER_SANITIZE_STRING);
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	if (strlen($title) < 1 || strlen($title) > 256) {
+	if (strlen($title) < 1 || strlen($title) > 60) {
 		$errors['title'] = true;
 	}
 	
-	if (strlen($release_date) != 10) {
+	if (strlen($release_date) < 1 || strlen($release_date) > 30) {
 		$errors['release_date'] = true;
 		
 	}
 	
-	if (strlen($director) < 1 || strlen($director) > 256) {
+	if (strlen($director) < 1 || strlen($director) > 30) {
 		$errors['director'] = true;
 		
 	}
 	
 	if (empty($errors)) {
-		require_once 'includes/db.php';
+		
 		
 		$sql = $db->prepare('
-		INSERT INTO movies (title, release_date, director, genre)
-		VALUES (:title, :release_date, :director, :genre)
+			INSERT INTO movies (title, release_date, director, genre)
+			VALUES (:title, :release_date, :director, :genre)
 		');
 		
-		$sql->bindValue(':id', $id, PDO::PARAM_INT);
+		
 		$sql->bindValue(':title', $title, PDO::PARAM_STR);
-		$sql->bindValue(':release_date', $release_date, PDO::PARAM_STR);
-		$sql->bindValue(':director', $director, PDO::PARAM_STR);
-		$sql->bindValue(':genre', $genre, PDO::PARAM_STR);
+		$sql->bindValue(':release_date', $release_date, PDO::PARAM_INT);
+		$sql->bindValue(':director', $director, PDO::PARAM_INT);
+		$sql->bindValue(':genre', $genre, PDO::PARAM_INT);
 		
 		$sql->execute();
 		// Do DB stuff
@@ -62,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
 		<div>
 			<label for="title">
-			Movie Title
+			 Title
 			<?php if (isset($errors['title'])) : ?>
 			<strong class="error">is required</strong>
 			<?php endif; ?> 
