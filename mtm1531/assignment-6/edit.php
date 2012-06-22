@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		
 		header('Location: index.php');
 		exit; 
-		
+				
 	}
 	
 	}else {
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			WHERE id= :id
 
 		');
-		$sql->bindValue(':id', $id, PDO::PARAM_STR);
+		$sql->bindValue(':id', $id, PDO::PARAM_INT);
 		$sql->execute();
 
 		$results = $sql->fetch();
