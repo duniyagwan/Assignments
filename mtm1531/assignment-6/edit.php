@@ -15,18 +15,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$errors['title'] = true;
 	}
 	
-	if (strlen($release_date) != 10) {
+	if (strlen($release_date) != 1) {
 		$errors['release_date'] = true;
 		
 	}
 	
-	if (strlen($director) < 1 || strlen($director) > 256) {
+	if (strlen($director) < 1 || strlen($director) > 30) {
 		$errors['director'] = true;
 		
 	}
 	
+	if (strlen($genre) < 1 || strlen($genre) > 30) {
+		$errors['genre'] = true;
+		
+	}
+	
 	if (empty($errors)) {
-		require_once 'includes/db.php';
+		
 		
 		$sql = $db->prepare('
 		UPDATE movie
@@ -39,9 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		
 		$sql->bindValue(':id', $id, PDO::PARAM_INT);
 		$sql->bindValue(':title', $title, PDO::PARAM_STR);
-		$sql->bindValue(':release_date', $release_date, PDO::PARAM_STR);
-		$sql->bindValue(':director', $director, PDO::PARAM_STR);
-		$sql->bindValue(':genre', $genre, PDO::PARAM_STR);
+		$sql->bindValue(':release_date', $release_date, PDO::PARAM_INT);
+		$sql->bindValue(':director', $director, PDO::PARAM_INT);
+		$sql->bindValue(':genre', $genre, PDO::PARAM_INT);
 		
 		$sql->execute();
 		// Do DB stuff
@@ -58,12 +63,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			WHERE id= :id
 
 		');
-		$sql->bindValue(':id', $id, PDO::PARAM_INT);
+		$sql->bindValue(':id', $id, PDO::PARAM_STR);
 		$sql->execute();
 
 		$results = $sql->fetch();
 
-		$movie_title = $results['title'];
+		$title = $results['title'];
 		$release_date = $results['release_date'];
 		$director = $results['director'];
 		$genre = $results['genre'];
@@ -74,12 +79,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
 <meta charset="utf-8">
-<title>Add New Movie</title>
+<title>Edit Movie</title>
 </head>
 
 <body>
 
-	<h1>Add New Movie</h1>
+	<h1>Edit Movie</h1>
 	
 	<form method="post" action="add.php">
 	
