@@ -1,7 +1,6 @@
 <?php
 
-
-
+require_once 'includes/db.php';
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 
 $sql = $db->prepare('
@@ -13,7 +12,6 @@ $sql = $db->prepare('
 $sql->bindValue(':username', $username, PDO::PARAM_STR);
 $sql->execute();
 $results = $sql->fetch();
-
 if (empty($results)) {
 	echo 'available';
 } else {
