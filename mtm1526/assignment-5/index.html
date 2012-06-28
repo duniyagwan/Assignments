@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Untitled Document</title>
+</head>
+
+<body>
+	<form>
+		<div>
+			<label for="username">Username</label>
+			<input id="username" name="username" required>
+			<strong class="user-available" data-status="unchecked">Available</strong>
+		</div>
+		<div>
+			<label for="email">Email Address</label>
+			<input id="email" name="email" required>
+			<strong class="email-available" data-status="unchecked">Available</strong>
+		</div>
+		<div>
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" required>
+			<strong>Password requirements</strong>
+			<ul class="pass-reqs">
+				<li class="pass-length">At least 6 characters</li>
+				<li class="pass-lower">1 lowercase letter</li>
+				<li class="pass-upper">1 uppercase letter</li>
+				<li class="pass-num">1 number</li>
+				<li class="pass-symbol">1 symbol</li>
+			</ul>
+		</div>
+
+		<button type="submit">Submit</button>
+
+	</form>
+</body>	
+</html>
