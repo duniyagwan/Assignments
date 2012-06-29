@@ -1,0 +1,55 @@
+html {
+	background-color:#999; 
+	font-family:Tahoma, Geneva, sans-serif;
+	
+}
+
+body{
+	width: 50em;
+	margin: 1em auto;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+nav li {
+	display: inline;
+}
+
+nav a,
+nav a:link,
+nav a:visited {
+	display: inline-block;
+	border-radius: 4px 4px 0 0;
+	background-color: #e2e2e2;
+	padding: 0.5em 1em;
+	text-decoration: none;
+	
+}
+
+nav .current a,
+nav .current a:link,
+nav .current a:visited {
+	background-color:#CCC;
+
+}
+
+article {
+	background-color: #FFF;
+	padding: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
