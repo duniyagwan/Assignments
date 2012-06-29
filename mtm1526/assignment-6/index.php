@@ -17,10 +17,10 @@ if (isset($_GET['planet'])) {
 
 	<nav>
 		<ul>
-			<li<?php if ($planet != 'jupiter' && $planet != 'neptune' && $planet != 'mars') { ?> class="current"<?php } ?>><a href="?planet=earth">Earth</a></li>
-			<li<?php if ($planet == 'jupiter') { ?> class="current"<?php } ?>><a href="?planet=jupiter">Jupiter</a></li>
-			<li<?php if ($planet == 'neptune') { ?> class="current"<?php } ?>><a href="?planet=neptune">Neptune</a></li>
-			<li<?php if ($planet == 'mars') { ?> class="current"<?php } ?>><a href="?planet=mars">Mars</a></li>
+			<li id="earth"<?php if ($planet != 'jupiter' && $planet != 'neptune' && $planet != 'mars') { ?> class="current"<?php } ?>><a href="?planet=earth">Earth</a></li>
+			<li id="jupiter"<?php if ($planet == 'jupiter') { ?> class="current"<?php } ?>><a href="?planet=jupiter">Jupiter</a></li>
+			<li id="neptune"<?php if ($planet == 'neptune') { ?> class="current"<?php } ?>><a href="?planet=neptune">Neptune</a></li>
+			<li id="mars"<?php if ($planet == 'mars') { ?> class="current"<?php } ?>><a href="?planet=mars">Mars</a></li>
 		</ul>
 	</nav>
 	
@@ -43,7 +43,7 @@ if (isset($_GET['planet'])) {
 	?>
 	</article>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script src="js/js-validator.js"></script>
+	<script src="js/planets.js"></script>
 </body>
 </html>
 
