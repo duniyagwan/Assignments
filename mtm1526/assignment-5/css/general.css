@@ -39,3 +39,15 @@ color: #090;
 .email-available[data-status="unavailable"] {
 color: #f33;
 }
+
+[data-status="available"] {
+	color: #090;
+}
+
+[data-status="unavailable"] {
+	color: #f33;
+}
+
+[data-status="unavailable"]:before {
+	content:"✖";
+}
