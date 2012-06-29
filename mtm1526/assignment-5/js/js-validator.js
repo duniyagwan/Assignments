@@ -1,7 +1,7 @@
 // JavaScript Document
 $(document).ready(function() {
 	var userAvailable = $('.user-available');
-	var emailAvalable = $('.email-available');
+	var emailAvailable = $('.email-available');
 	var passwordReqs = 0;
 	$('#username').on('change', function (ev){
 		var username = $(this).val();
