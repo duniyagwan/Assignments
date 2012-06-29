@@ -1,6 +1,4 @@
 $(document).ready(function(){
-
-	
 	
 	$('#earth').on('click', function(){
 		e.prevenDefault();
