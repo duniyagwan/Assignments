@@ -36,12 +36,15 @@ nav .current a:visited {
 
 }
 
-.plan {
+#fillme {
 	background-color: #9FF;
 	padding: 1em;
 }
 
-
+article {
+	background-color: #fff;
+	padding: 1em;
+}
 
 
 
